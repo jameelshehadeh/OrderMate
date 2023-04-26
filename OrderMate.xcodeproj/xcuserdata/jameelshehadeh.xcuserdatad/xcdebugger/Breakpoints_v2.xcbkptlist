@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7E598ED1-1B04-4052-9283-E04E7C0E5CBB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D268AB71-EB1D-4039-9663-53F9586DF2DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/MainTabBar/MainTabBarController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D268AB71-EB1D-4039-9663-53F9586DF2DE - 68fb1c48451c2b6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in OrderMate.MainTabBarController.bindData() -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainTabBar/MainTabBarController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "D268AB71-EB1D-4039-9663-53F9586DF2DE - 68fb1c48451c2b6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in OrderMate.MainTabBarController.bindData() -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainTabBar/MainTabBarController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54E403B3-A8ED-4D11-AA36-CDA02E921AEF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/MainTabBar/MainTabBarController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "54E403B3-A8ED-4D11-AA36-CDA02E921AEF - e0e77c8f545d9d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrderMate.MainTabBarController.viewDidLoad() -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainTabBar/MainTabBarController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "54E403B3-A8ED-4D11-AA36-CDA02E921AEF - e0e77c8f545d9d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrderMate.MainTabBarController.viewDidLoad() -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainTabBar/MainTabBarController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

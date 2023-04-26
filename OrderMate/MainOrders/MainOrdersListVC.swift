@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainOrdersListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
