@@ -15,6 +15,9 @@
 		FA3B54F129F98D18003C519D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54F029F98D18003C519D /* MainTabBarController.swift */; };
 		FA3B54F329F98D97003C519D /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54F229F98D97003C519D /* MainTabBarViewModel.swift */; };
 		FA3B54F529F994F9003C519D /* DeliveredOrdersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54F429F994F9003C519D /* DeliveredOrdersListVC.swift */; };
+		FA3B54FA29F9978E003C519D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA3B54F929F9978E003C519D /* SnapKit */; };
+		FA3B54FD29F998E0003C519D /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54FC29F998E0003C519D /* OrderTableViewCell.swift */; };
+		FA3B550029F99B99003C519D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54FF29F99B99003C519D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,8 @@
 		FA3B54F029F98D18003C519D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA3B54F229F98D97003C519D /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		FA3B54F429F994F9003C519D /* DeliveredOrdersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveredOrdersListVC.swift; sourceTree = "<group>"; };
+		FA3B54FC29F998E0003C519D /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		FA3B54FF29F99B99003C519D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3B54FA29F9978E003C519D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,8 @@
 			children = (
 				FA3B54DB29F98942003C519D /* AppDelegate.swift */,
 				FA3B54DD29F98942003C519D /* SceneDelegate.swift */,
+				FA3B54FE29F99B79003C519D /* Resources */,
+				FA3B54FB29F998C7003C519D /* TableCells */,
 				FA3B54EF29F98CA5003C519D /* MainTabBar */,
 				FA3B54F629F995ED003C519D /* MainOrders */,
 				FA3B54F729F9960A003C519D /* DeliveredOrders */,
@@ -97,6 +105,22 @@
 			path = DeliveredOrders;
 			sourceTree = "<group>";
 		};
+		FA3B54FB29F998C7003C519D /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B54FC29F998E0003C519D /* OrderTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		FA3B54FE29F99B79003C519D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B54FF29F99B99003C519D /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,6 +137,9 @@
 			dependencies = (
 			);
 			name = OrderMate;
+			packageProductDependencies = (
+				FA3B54F929F9978E003C519D /* SnapKit */,
+			);
 			productName = OrderMate;
 			productReference = FA3B54D829F98942003C519D /* OrderMate.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +168,9 @@
 				Base,
 			);
 			mainGroup = FA3B54CF29F98942003C519D;
+			packageReferences = (
+				FA3B54F829F9978E003C519D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = FA3B54D929F98942003C519D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,9 +200,11 @@
 				FA3B54F329F98D97003C519D /* MainTabBarViewModel.swift in Sources */,
 				FA3B54E029F98942003C519D /* MainOrdersListVC.swift in Sources */,
 				FA3B54F529F994F9003C519D /* DeliveredOrdersListVC.swift in Sources */,
+				FA3B54FD29F998E0003C519D /* OrderTableViewCell.swift in Sources */,
 				FA3B54DC29F98942003C519D /* AppDelegate.swift in Sources */,
 				FA3B54F129F98D18003C519D /* MainTabBarController.swift in Sources */,
 				FA3B54DE29F98942003C519D /* SceneDelegate.swift in Sources */,
+				FA3B550029F99B99003C519D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA3B54F829F9978E003C519D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA3B54F929F9978E003C519D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3B54F829F9978E003C519D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA3B54D029F98942003C519D /* Project object */;
 }
