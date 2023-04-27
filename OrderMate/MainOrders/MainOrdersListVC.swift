@@ -18,6 +18,15 @@ class MainOrdersListVC: UIViewController {
         return tableView
     }()
     
+    private lazy var floatingButton : UIButton = {
+       let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15,weight: .medium)
+        button.setTitle("Place order", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = .purple
+        button.addTarget(self, action: #selector(didTapPlaceOrder), for: .touchUpInside)
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -30,6 +39,20 @@ class MainOrdersListVC: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(view.safeAreaLayoutGuide)
         }
+        
+        view.addSubview(floatingButton)
+        floatingButton.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.width.equalTo(170)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.trailing.equalTo(view.snp_trailingMargin)
+        }
+        floatingButton.layer.cornerRadius = 15
+    }
+    
+    @objc func didTapPlaceOrder(){
+        
+        
     }
 
 }
