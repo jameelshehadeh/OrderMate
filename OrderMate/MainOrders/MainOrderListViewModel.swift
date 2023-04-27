@@ -31,6 +31,8 @@ class MainOrderListViewModel {
     private let maxPreparingOrders = 3
     private let maxTotalOrders = 10
     
+    var playSound : (IndexPath)->() = {_ in}
+    
     var didUpdateOrders : ()->() = {}
     
     var showAlert : (String)->() = { _ in }
@@ -69,7 +71,7 @@ class MainOrderListViewModel {
         case .ready:
             orders[index].status = .delivered
             DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-                self.removeDeliveredOrder(id: order.id)
+                self.removeDeliveredOrder(row:index,id: order.id)
             }
         case .delivered:
             break
@@ -80,7 +82,8 @@ class MainOrderListViewModel {
         return orders.filter { $0.status == .preparing }.count < maxPreparingOrders
     }
     
-    func removeDeliveredOrder(id: String) {
+    func removeDeliveredOrder(row: Int,id: String) {
+        playSound(IndexPath(row: row, section: 0))
         orders.removeAll { $0.id == id }
     }
     

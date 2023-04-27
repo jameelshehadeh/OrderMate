@@ -45,6 +45,15 @@ class MainOrdersListVC: UIViewController {
     
     func bindData(){
         
+        viewModel.playSound = { [weak self] indexPath in
+            guard let self else {return}
+            DispatchQueue.main.async {
+                guard let cell = self.tableView.cellForRow(at: indexPath) as? OrderTableViewCell else {return}
+                cell.playDeliveredSound()
+            }
+            
+        }
+        
         viewModel.didUpdateOrders = { [weak self] in
             guard let self else {return}
             DispatchQueue.main.async {
