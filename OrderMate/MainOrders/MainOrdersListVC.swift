@@ -10,6 +10,8 @@ import SnapKit
 
 class MainOrdersListVC: UIViewController {
 
+    let viewModel = MainOrderListViewModel()
+    
     private lazy var tableView : UITableView = {
        let tableView = UITableView()
         tableView.register(OrderTableViewCell.self, forCellReuseIdentifier: Constants.orderCellId)
@@ -30,9 +32,37 @@ class MainOrdersListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindData()
+    }
+    
+    func bindData(){
+        
+        viewModel.didUpdateOrders = { [weak self] in
+            guard let self else {return}
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        viewModel.showAlert = { [weak self] alertMessage in
+            guard let self else {return}
+            let alert = UIAlertController(title: "Warning", message: alertMessage, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Dismiss", style: .cancel)
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }
+        
     }
     
     func configureUI(){
+
+        title = "Orders List"
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .purple
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -51,8 +81,7 @@ class MainOrdersListVC: UIViewController {
     }
     
     @objc func didTapPlaceOrder(){
-        
-        
+        viewModel.addOrder()
     }
 
 }
@@ -65,20 +94,21 @@ extension MainOrdersListVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.numberOfOrders
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let orderItem = viewModel.order(at: indexPath.row)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.orderCellId, for: indexPath) as? OrderTableViewCell else {
             return UITableViewCell()
         }
-        
+        cell.configureCell(with: orderItem)
         return cell
     }
     
-    
-    
-    
+    // replace cell with the button
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.updateOrderStatus(at: indexPath.row)
+    }
 }
 

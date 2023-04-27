@@ -19,6 +19,8 @@
 		FA3B54FD29F998E0003C519D /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54FC29F998E0003C519D /* OrderTableViewCell.swift */; };
 		FA3B550029F99B99003C519D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B54FF29F99B99003C519D /* Constants.swift */; };
 		FA3B550229F9A7D2003C519D /* BellSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA3B550129F9A7D2003C519D /* BellSound.mp3 */; };
+		FA3B550629FA74AB003C519D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B550529FA74AB003C519D /* Order.swift */; };
+		FA3B550829FA74C2003C519D /* MainOrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		FA3B54FC29F998E0003C519D /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		FA3B54FF29F99B99003C519D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FA3B550129F9A7D2003C519D /* BellSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BellSound.mp3; sourceTree = "<group>"; };
+		FA3B550529FA74AB003C519D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrderListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,9 @@
 		FA3B54F629F995ED003C519D /* MainOrders */ = {
 			isa = PBXGroup;
 			children = (
+				FA3B550529FA74AB003C519D /* Order.swift */,
 				FA3B54DF29F98942003C519D /* MainOrdersListVC.swift */,
+				FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */,
 			);
 			path = MainOrders;
 			sourceTree = "<group>";
@@ -204,8 +210,10 @@
 				FA3B54F329F98D97003C519D /* MainTabBarViewModel.swift in Sources */,
 				FA3B54E029F98942003C519D /* MainOrdersListVC.swift in Sources */,
 				FA3B54F529F994F9003C519D /* DeliveredOrdersListVC.swift in Sources */,
+				FA3B550629FA74AB003C519D /* Order.swift in Sources */,
 				FA3B54FD29F998E0003C519D /* OrderTableViewCell.swift in Sources */,
 				FA3B54DC29F98942003C519D /* AppDelegate.swift in Sources */,
+				FA3B550829FA74C2003C519D /* MainOrderListViewModel.swift in Sources */,
 				FA3B54F129F98D18003C519D /* MainTabBarController.swift in Sources */,
 				FA3B54DE29F98942003C519D /* SceneDelegate.swift in Sources */,
 				FA3B550029F99B99003C519D /* Constants.swift in Sources */,

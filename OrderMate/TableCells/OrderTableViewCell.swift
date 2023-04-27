@@ -14,7 +14,7 @@ class OrderTableViewCell: UITableViewCell {
     var audioPlayer: AVAudioPlayer?
 
     private lazy var contentVStack : UIStackView = {
-        let stackView = UIStackView.init(arrangedSubviews: [hStackView,progressBarView])
+        let stackView = UIStackView.init(arrangedSubviews: [hStackView,timeCreatedLabel,progressBarView])
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
@@ -39,10 +39,18 @@ class OrderTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var timeCreatedLabel : UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13 , weight: .light)
+        label.textColor = .lightGray
+        return label
+    }()
+    
     private lazy var orderStatusButton : UIButton = {
         let button = UIButton()
         button.backgroundColor = .purple
         button.layer.cornerRadius = 12
+        button.isUserInteractionEnabled = false
         button.snp.makeConstraints { make in
             make.width.equalTo(100)
         }
@@ -84,6 +92,24 @@ class OrderTableViewCell: UITableViewCell {
             make.edges.equalToSuperview()
         }
         
+    }
+    
+    func configureCell(with model: Order) {
+        orderIdLabel.text = model.name
+        orderStatusButton.setTitle(model.status.rawValue, for: .normal)
+        timeCreatedLabel.text = formatDate(timeStamp: model.createdTime)
+    }
+    
+    func formatDate(timeStamp: TimeInterval) -> String {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+
+        let date = Date(timeIntervalSince1970: timeStamp)
+        let formattedDate = dateFormatter.string(from: date)
+
+        return formattedDate
     }
     
   func playDeliveredSound() {
