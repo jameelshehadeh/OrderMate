@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct Order : Equatable {
+struct Order {
+    
     let id = UUID().uuidString
-    let orderId : Int
+    let orderNo : Int
     let name: String
     let createdTime = Date().timeIntervalSince1970
     var status: OrderStatus
+    
 }
 
 enum OrderStatus : String{

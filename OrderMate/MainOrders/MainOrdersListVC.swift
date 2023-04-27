@@ -116,7 +116,6 @@ extension MainOrdersListVC : UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
-    // replace cell with the button
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.updateOrderStatus(at: indexPath.row)
     }

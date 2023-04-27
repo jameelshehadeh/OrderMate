@@ -31,7 +31,6 @@ class MainOrderListViewModel {
     private let maxPreparingOrders = 3
     private let maxTotalOrders = 10
     
-    
     var didUpdateOrders : ()->() = {}
     
     var showAlert : (String)->() = { _ in }
@@ -52,7 +51,7 @@ class MainOrderListViewModel {
         
         currentOrder += 1
         
-        let order = Order(orderId: currentOrder, name: "Order no: \(currentOrder)", status: .new)
+        let order = Order(orderNo: currentOrder, name: "Order no: \(currentOrder)", status: .new)
         
         orders.append(order)
     }
@@ -69,7 +68,7 @@ class MainOrderListViewModel {
             orders[index].status = .ready
         case .ready:
             orders[index].status = .delivered
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
                 self.removeDeliveredOrder(id: order.id)
             }
         case .delivered:
@@ -82,7 +81,7 @@ class MainOrderListViewModel {
     }
     
     func removeDeliveredOrder(id: String) {
-        orders.removeAll { $0.id == id}
+        orders.removeAll { $0.id == id }
     }
     
     func searchOrders(text: String){
@@ -91,7 +90,7 @@ class MainOrderListViewModel {
             return
         }
         isSearching = true
-        searchedOrders = orders.filter { $0.name.contains(text) || "\($0.orderId)" == text }
+        searchedOrders = orders.filter { $0.name.contains(text) || "\($0.orderNo)" == text }
     }
     
 }
