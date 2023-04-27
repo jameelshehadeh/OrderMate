@@ -15,20 +15,33 @@ class MainOrderListViewModel {
         }
     }
     
+    private var searchedOrders = [Order](){
+        didSet {
+            didUpdateOrders()
+        }
+    }
+    
+    var isSearching = false {
+        didSet{
+            didUpdateOrders()
+        }
+    }
+    
     private var currentOrder = 0
     private let maxPreparingOrders = 3
     private let maxTotalOrders = 10
+    
     
     var didUpdateOrders : ()->() = {}
     
     var showAlert : (String)->() = { _ in }
     
     var numberOfOrders: Int {
-        return orders.count
+        return isSearching == true ? searchedOrders.count : orders.count
     }
     
     func order(at index: Int) -> Order {
-        return orders[index]
+        return isSearching == true ? searchedOrders[index] : orders[index]
     }
     
     func addOrder() {
@@ -39,7 +52,8 @@ class MainOrderListViewModel {
         
         currentOrder += 1
         
-        let order = Order(name: "Order no: \(currentOrder)", status: .new)
+        let order = Order(orderId: currentOrder, name: "Order no: \(currentOrder)", status: .new)
+        
         orders.append(order)
     }
     
@@ -55,8 +69,8 @@ class MainOrderListViewModel {
             orders[index].status = .ready
         case .ready:
             orders[index].status = .delivered
-            DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-                self.removeDeliveredOrder(at: index)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.removeDeliveredOrder(id: order.id)
             }
         case .delivered:
             break
@@ -67,9 +81,17 @@ class MainOrderListViewModel {
         return orders.filter { $0.status == .preparing }.count < maxPreparingOrders
     }
     
-    func removeDeliveredOrder(at index: Int) {
-        guard index >= 0 && index < orders.count else { return }
-        orders.remove(at: index)
+    func removeDeliveredOrder(id: String) {
+        orders.removeAll { $0.id == id}
+    }
+    
+    func searchOrders(text: String){
+        guard text.count > 0 else {
+            isSearching = false
+            return
+        }
+        isSearching = true
+        searchedOrders = orders.filter { $0.name.contains(text) || "\($0.orderId)" == text }
     }
     
 }

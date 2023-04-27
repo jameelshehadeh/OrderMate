@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Order {
+struct Order : Equatable {
+    let id = UUID().uuidString
+    let orderId : Int
     let name: String
     let createdTime = Date().timeIntervalSince1970
     var status: OrderStatus

@@ -12,6 +12,14 @@ class MainOrdersListVC: UIViewController {
 
     let viewModel = MainOrderListViewModel()
     
+    private lazy var searchController : UISearchController = {
+        let sc = UISearchController()
+        sc.searchBar.backgroundColor = .white
+        sc.searchBar.placeholder = "Search order by ID or name"
+        sc.searchResultsUpdater = self
+        return sc
+    }()
+    
     private lazy var tableView : UITableView = {
        let tableView = UITableView()
         tableView.register(OrderTableViewCell.self, forCellReuseIdentifier: Constants.orderCellId)
@@ -55,13 +63,15 @@ class MainOrdersListVC: UIViewController {
     }
     
     func configureUI(){
-
+        
         title = "Orders List"
+        view.backgroundColor = .white
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.backgroundColor = .purple
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navBarAppearance.backgroundColor = .white
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.purple]
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationItem.searchController = searchController
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -112,3 +122,11 @@ extension MainOrdersListVC : UITableViewDelegate , UITableViewDataSource {
     }
 }
 
+extension MainOrdersListVC : UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else {return}
+         viewModel.searchOrders(text: searchText)
+    }
+    
+}

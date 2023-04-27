@@ -3,4 +3,146 @@
    uuid = "7E598ED1-1B04-4052-9283-E04E7C0E5CBB"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "468C3C5E-1587-4D74-87CE-09888BEDCEBB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/MainOrders/MainOrdersListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "468C3C5E-1587-4D74-87CE-09888BEDCEBB - d53272a5fc9c85cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Foundation.IndexPath) -&gt; () in OrderMate.MainOrdersListVC.bindData() -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainOrders/MainOrdersListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "468C3C5E-1587-4D74-87CE-09888BEDCEBB - d53272a5fc9c85cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Foundation.IndexPath) -&gt; () in OrderMate.MainOrdersListVC.bindData() -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainOrders/MainOrdersListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0603B575-5475-4B2F-8DF9-28087DB029E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/MainOrders/MainOrdersListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149">
+            <Locations>
+               <Location
+                  uuid = "0603B575-5475-4B2F-8DF9-28087DB029E1 - c69ec73ad62cec9a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrderMate.MainOrdersListVC.startCellProgress(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainOrders/MainOrdersListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "0603B575-5475-4B2F-8DF9-28087DB029E1 - c69ec73ad62cec9a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrderMate.MainOrdersListVC.startCellProgress(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "OrderMate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameelshehadeh/Desktop/OrderMate/OrderMate/MainOrders/MainOrdersListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "408">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B997FA9B-8C90-430A-872A-55CAC8D6766B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/TableCells/OrderTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "503980A4-4D33-4E23-A4C0-6C0BD74BBFC6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/TableCells/OrderTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "stopProgress()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18457ED4-BC09-4258-8725-F72AAA4B0F07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderMate/TableCells/OrderTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "init?(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
