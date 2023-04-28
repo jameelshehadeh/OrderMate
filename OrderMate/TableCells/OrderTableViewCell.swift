@@ -116,17 +116,21 @@ class OrderTableViewCell: UITableViewCell {
       
       guard let url = Bundle.main.url(forResource: "BellSound", withExtension: "mp3") else { return }
         
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.prepareToPlay()
-        } catch {
-            print("Error loading sound file: \(error.localizedDescription)")
-        }
       
-      guard let player = audioPlayer else { return }
-      
-      if !player.isPlaying {
-          player.play()
+      DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+          guard let self else {return}
+          do {
+              self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+              self.audioPlayer?.prepareToPlay()
+          } catch {
+              print("Error loading sound file: \(error.localizedDescription)")
+          }
+          
+          guard let player = audioPlayer else { return }
+          
+          if !player.isPlaying {
+              player.play()
+          }
       }
   }
     
@@ -162,3 +166,5 @@ class OrderTableViewCell: UITableViewCell {
     
     
 }
+
+
