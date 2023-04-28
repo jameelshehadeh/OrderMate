@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 protocol OrderTableViewCellDelegate : AnyObject {
     
@@ -16,13 +15,11 @@ protocol OrderTableViewCellDelegate : AnyObject {
 
 class OrderTableViewCell: UITableViewCell {
 
-    var timer: Timer?
-
     weak var delegate : OrderTableViewCellDelegate?
     var indexPath : IndexPath?
     
     private lazy var contentVStack : UIStackView = {
-        let stackView = UIStackView.init(arrangedSubviews: [hStackView,orderNoLabel,progressBarView])
+        let stackView = UIStackView.init(arrangedSubviews: [hStackView,orderNoLabel])
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
@@ -49,7 +46,6 @@ class OrderTableViewCell: UITableViewCell {
         return label
     }()
     
-    
     private lazy var orderNoLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17,weight: .bold)
@@ -68,27 +64,6 @@ class OrderTableViewCell: UITableViewCell {
         button.setTitle("New", for: .normal)
         return button
     }()
-    
-    private lazy var progressBarView : UIView = {
-        let view = UIView()
-        view.snp.makeConstraints { make in
-            make.height.equalTo(2)
-        }
-        view.addSubview(progressBar)
-        progressBar.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        return view
-    }()
-    
-    private lazy var progressBar : UIProgressView = {
-        let progressBar = UIProgressView()
-        progressBar.progressTintColor = .purple
-        progressBar.isHidden = true
-        progressBar.progress = 0.0
-        return progressBar
-    }()
-
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -110,27 +85,7 @@ class OrderTableViewCell: UITableViewCell {
         orderStatusButton.setTitle(model.status.rawValue, for: .normal)
         model.status == .delivered ? (orderStatusButton.backgroundColor = .systemGreen) : (orderStatusButton.backgroundColor = .purple)
     }
-    
-    func startProgress() {
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateProgress() {
-        if progressBar.progress < 1.0 {
-            progressBar.isHidden = false
-            progressBar.progress += 1.0/150.0
-        }
-        else {
-            stopProgress()
-        }
-    }
 
-    
-    func stopProgress() {
-        timer?.invalidate()
-        timer = nil
-    }
-    
     @objc func didTapStatus(){
         guard let indexPath else {return}
         delegate?.updateCellStatus(indexPath: indexPath)
@@ -140,7 +95,4 @@ class OrderTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
 }
-
-
