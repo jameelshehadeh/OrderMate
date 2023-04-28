@@ -45,15 +45,14 @@ class MainOrderListViewModel {
         return isSearching == true ? searchedOrders[index] : orders[index]
     }
     
-    func addOrder() {
+    func addOrder(orderName: String) {
         guard orders.count < maxTotalOrders else {
             showAlert("You cant add more than 10 orders at the same time.")
             return
         }
         
         currentOrder += 1
-        
-        let order = Order(orderNo: currentOrder, name: "Order no: \(currentOrder)", status: .new)
+        let order = Order(orderNo: currentOrder, name: orderName, status: .new)
         
         orders.append(order)
     }

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainOrdersListVC: UIViewController {
+class MainOrdersListVC: UIViewController , Alertable {
 
     let viewModel = MainOrderListViewModel()
     
@@ -97,7 +97,14 @@ class MainOrdersListVC: UIViewController {
     }
     
     @objc func didTapPlaceOrder(){
-        viewModel.addOrder()
+        
+        showAlertInput(alertTitle: "Enter Order name", placeHolder: "Enter order name", confirmTitle: "Place order")
+
+        AlertInputView.shared.confirmAction = { [weak self] orderName in
+            guard let self , let orderName , !orderName.isEmpty else {return}
+            self.viewModel.addOrder(orderName: orderName)
+            
+        }
     }
 
 }

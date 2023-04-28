@@ -22,6 +22,8 @@
 		FA3B550629FA74AB003C519D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B550529FA74AB003C519D /* Order.swift */; };
 		FA3B550829FA74C2003C519D /* MainOrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */; };
 		FA4918E029FB9075001D170E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918DF29FB9075001D170E /* UIViewController+Extensions.swift */; };
+		FA4918E229FB9F23001D170E /* AlertInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918E129FB9F23001D170E /* AlertInputView.swift */; };
+		FA4918E429FBAB15001D170E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918E329FBAB15001D170E /* Alertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		FA3B550529FA74AB003C519D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrderListViewModel.swift; sourceTree = "<group>"; };
 		FA4918DF29FB9075001D170E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FA4918E129FB9F23001D170E /* AlertInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInputView.swift; sourceTree = "<group>"; };
+		FA4918E329FBAB15001D170E /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			children = (
 				FA3B54DB29F98942003C519D /* AppDelegate.swift */,
 				FA3B54DD29F98942003C519D /* SceneDelegate.swift */,
+				FA4918E529FBAE1F001D170E /* CustomAlerts */,
 				FA4918DE29FB905F001D170E /* Extensions */,
 				FA3B54FE29F99B79003C519D /* Resources */,
 				FA3B54FB29F998C7003C519D /* TableCells */,
@@ -102,6 +107,7 @@
 		FA3B54F629F995ED003C519D /* MainOrders */ = {
 			isa = PBXGroup;
 			children = (
+				FA4918E329FBAB15001D170E /* Alertable.swift */,
 				FA3B550529FA74AB003C519D /* Order.swift */,
 				FA3B54DF29F98942003C519D /* MainOrdersListVC.swift */,
 				FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */,
@@ -139,6 +145,14 @@
 				FA4918DF29FB9075001D170E /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA4918E529FBAE1F001D170E /* CustomAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				FA4918E129FB9F23001D170E /* AlertInputView.swift */,
+			);
+			path = CustomAlerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +235,9 @@
 				FA3B54F329F98D97003C519D /* MainTabBarViewModel.swift in Sources */,
 				FA3B54E029F98942003C519D /* MainOrdersListVC.swift in Sources */,
 				FA3B54F529F994F9003C519D /* DeliveredOrdersListVC.swift in Sources */,
+				FA4918E229FB9F23001D170E /* AlertInputView.swift in Sources */,
 				FA3B550629FA74AB003C519D /* Order.swift in Sources */,
+				FA4918E429FBAB15001D170E /* Alertable.swift in Sources */,
 				FA3B54FD29F998E0003C519D /* OrderTableViewCell.swift in Sources */,
 				FA3B54DC29F98942003C519D /* AppDelegate.swift in Sources */,
 				FA4918E029FB9075001D170E /* UIViewController+Extensions.swift in Sources */,
