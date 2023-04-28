@@ -14,7 +14,7 @@ class MainOrdersListVC: UIViewController {
     
     private lazy var searchController : UISearchController = {
         let sc = UISearchController()
-        sc.searchBar.backgroundColor = .white
+        sc.searchBar.backgroundColor = .systemBackground
         sc.searchBar.placeholder = "Search order by ID or name"
         sc.searchResultsUpdater = self
         return sc
@@ -34,6 +34,7 @@ class MainOrdersListVC: UIViewController {
         button.setTitle("Place order", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = .purple
+        button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(didTapPlaceOrder), for: .touchUpInside)
         return button
     }()
@@ -74,12 +75,8 @@ class MainOrdersListVC: UIViewController {
     func configureUI(){
         
         title = "Orders List"
-        view.backgroundColor = .white
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.backgroundColor = .white
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.purple]
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        view.backgroundColor = .systemBackground
+        setNavBarAppearance()
         navigationItem.searchController = searchController
         
         view.addSubview(tableView)
@@ -96,7 +93,7 @@ class MainOrdersListVC: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
             make.trailing.equalTo(view.snp_trailingMargin)
         }
-        floatingButton.layer.cornerRadius = 15
+        
     }
     
     @objc func didTapPlaceOrder(){
