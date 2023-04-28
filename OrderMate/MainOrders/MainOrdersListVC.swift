@@ -10,7 +10,7 @@ import SnapKit
 
 class MainOrdersListVC: UIViewController , Alertable {
 
-    let viewModel = MainOrderListViewModel()
+    let viewModel : MainOrderListViewModel
     
     private lazy var searchController : UISearchController = {
         let sc = UISearchController()
@@ -42,6 +42,16 @@ class MainOrdersListVC: UIViewController , Alertable {
         super.viewDidLoad()
         configureUI()
         bindData()
+    }
+    
+    
+    init(viewModel: MainOrderListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func bindData(){

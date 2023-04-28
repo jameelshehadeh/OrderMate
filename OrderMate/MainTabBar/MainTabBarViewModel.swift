@@ -24,7 +24,8 @@ class MainTabBarViewModel {
     
     private func prepareMainOrdersListVC() -> UINavigationController {
         
-        let mainOrdersNavVC = UINavigationController(rootViewController: MainOrdersListVC())
+        let viewModel = MainOrderListViewModel()
+        let mainOrdersNavVC = UINavigationController(rootViewController: MainOrdersListVC(viewModel: viewModel))
         
         let mainOrdersTabBarItem = UITabBarItem(title: "Main Orders", image: UIImage(systemName: "list.bullet.clipboard.fill"), selectedImage: nil)
         mainOrdersNavVC.tabBarItem = mainOrdersTabBarItem
