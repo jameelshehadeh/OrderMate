@@ -65,7 +65,7 @@ class OrderDetailVC: UIViewController {
     }
         
     func configureUI(model: Order) {
-        
+        title = "Order details"
         orderNoLabel.text = "No: \(model.orderNo)"
         orderNameLabel.text = "Name: \(model.name)"
         orderStatusLabel.text = "Status: \(model.status.rawValue)"
