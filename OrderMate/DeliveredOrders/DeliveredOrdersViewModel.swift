@@ -19,6 +19,14 @@ class DeliveredOrdersViewModel {
          return ArchivedOrdersData.shared.orders
     }
     
+    var badgeCount : Int = 0 {
+        didSet {
+            updateBadge(badgeCount)
+        }
+    }
+    
+    var updateBadge : (Int)->() = { _ in  }
+    
     var numberOfOrders: Int {
         return orders.count
     }

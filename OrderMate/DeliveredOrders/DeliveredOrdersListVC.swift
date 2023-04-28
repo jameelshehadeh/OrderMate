@@ -22,16 +22,30 @@ class DeliveredOrdersListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleOrdersChanged(_:)), name: .init(Constants.archiveOrderNotification), object: nil)
     }
     
     init(viewModel: DeliveredOrdersViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        bindData()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleOrdersChanged(_:)), name: .init(Constants.archiveOrderNotification), object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func bindData(){
+        viewModel.updateBadge = { [weak self] badgeCount in
+            guard let self else {return}
+            setBadgeValue(value: badgeCount)
+        }
+    }
+    
+    func setBadgeValue(value: Int){
+        navigationController?.tabBarItem.badgeColor = .red
+        value > 0 ? (navigationController?.tabBarItem.badgeValue = "\(value)") : (navigationController?.tabBarItem.badgeValue = nil)
+        
     }
     
     deinit {
@@ -40,10 +54,12 @@ class DeliveredOrdersListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.tabBarItem.badgeValue = nil
+        viewModel.badgeCount = 0
     }
     
     @objc func handleOrdersChanged(_ notification: Notification) {
+        viewModel.badgeCount += 1
             tableView.reloadData()
         }
 
@@ -90,5 +106,3 @@ extension DeliveredOrdersListVC : UITableViewDelegate , UITableViewDataSource {
         push(vc)
     }
 }
-
-
