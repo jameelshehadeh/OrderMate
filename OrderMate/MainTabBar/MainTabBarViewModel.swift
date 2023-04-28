@@ -27,7 +27,7 @@ class MainTabBarViewModel {
         let viewModel = MainOrderListViewModel()
         let mainOrdersNavVC = UINavigationController(rootViewController: MainOrdersListVC(viewModel: viewModel))
         
-        let mainOrdersTabBarItem = UITabBarItem(title: "Main Orders", image: UIImage(systemName: "list.bullet.clipboard.fill"), selectedImage: nil)
+        let mainOrdersTabBarItem = UITabBarItem(title: "Main Orders", image: UIImage(systemName: "list.bullet"), selectedImage: nil)
         mainOrdersNavVC.tabBarItem = mainOrdersTabBarItem
         
         return mainOrdersNavVC
@@ -39,7 +39,7 @@ class MainTabBarViewModel {
         
         let deliveredOrdersNavVC = UINavigationController(rootViewController: DeliveredOrdersListVC(viewModel: viewModel))
         
-        let oldOrdersTabBarItem = UITabBarItem(title: "Delivered Orders", image: UIImage(systemName: "checklist.checked"), selectedImage: nil)
+        let oldOrdersTabBarItem = UITabBarItem(title: "Delivered Orders", image: UIImage(systemName: "checkmark.rectangle.fill"), selectedImage: nil)
         deliveredOrdersNavVC.tabBarItem = oldOrdersTabBarItem
         
         return deliveredOrdersNavVC
