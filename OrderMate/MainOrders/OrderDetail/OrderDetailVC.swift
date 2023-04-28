@@ -69,7 +69,7 @@ class OrderDetailVC: UIViewController {
         orderNoLabel.text = "No: \(model.orderNo)"
         orderNameLabel.text = "Name: \(model.name)"
         orderStatusLabel.text = "Status: \(model.status.rawValue)"
-        createdTimeLabel.text = "Created time: \(formatDate(timeStamp: model.createdTime))"
+        createdTimeLabel.text = "Created time: \(Util.formatDate(timeStamp: model.createdTime))"
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,16 +85,6 @@ class OrderDetailVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func formatDate(timeStamp: TimeInterval) -> String {
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-
-        let date = Date(timeIntervalSince1970: timeStamp)
-        let formattedDate = dateFormatter.string(from: date)
-
-        return formattedDate
-    }
+   
     
 }

@@ -25,6 +25,7 @@
 		FA4918E229FB9F23001D170E /* AlertInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918E129FB9F23001D170E /* AlertInputView.swift */; };
 		FA4918E429FBAB15001D170E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918E329FBAB15001D170E /* Alertable.swift */; };
 		FA4918EB29FBD144001D170E /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918EA29FBD144001D170E /* OrderDetailVC.swift */; };
+		FA4918ED29FBDACE001D170E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918EC29FBDACE001D170E /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		FA4918E129FB9F23001D170E /* AlertInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInputView.swift; sourceTree = "<group>"; };
 		FA4918E329FBAB15001D170E /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		FA4918EA29FBD144001D170E /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		FA4918EC29FBDACE001D170E /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3B54FF29F99B99003C519D /* Constants.swift */,
+				FA4918EC29FBDACE001D170E /* Util.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				FA4918E229FB9F23001D170E /* AlertInputView.swift in Sources */,
 				FA3B550629FA74AB003C519D /* Order.swift in Sources */,
 				FA4918E429FBAB15001D170E /* Alertable.swift in Sources */,
+				FA4918ED29FBDACE001D170E /* Util.swift in Sources */,
 				FA3B54FD29F998E0003C519D /* OrderTableViewCell.swift in Sources */,
 				FA3B54DC29F98942003C519D /* AppDelegate.swift in Sources */,
 				FA4918E029FB9075001D170E /* UIViewController+Extensions.swift in Sources */,
