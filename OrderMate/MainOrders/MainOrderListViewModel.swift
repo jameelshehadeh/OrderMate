@@ -91,7 +91,7 @@ class MainOrderListViewModel {
             return
         }
         isSearching = true
-        searchedOrders = orders.filter { $0.name.contains(text) || "\($0.orderNo)" == text }
+        searchedOrders = orders.filter { $0.name.lowercased().contains(text) || "\($0.orderNo)" == text }
     }
     
 }

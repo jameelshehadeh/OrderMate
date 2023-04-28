@@ -153,7 +153,7 @@ extension MainOrdersListVC : UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else {return}
-         viewModel.searchOrders(text: searchText)
+        viewModel.searchOrders(text: searchText.lowercased())
     }
     
 }
