@@ -26,6 +26,8 @@
 		FA4918E429FBAB15001D170E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918E329FBAB15001D170E /* Alertable.swift */; };
 		FA4918EB29FBD144001D170E /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918EA29FBD144001D170E /* OrderDetailVC.swift */; };
 		FA4918ED29FBDACE001D170E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4918EC29FBDACE001D170E /* Util.swift */; };
+		FA76F9D029FBF85000CB43E5 /* ArchivedOrdersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F9CF29FBF85000CB43E5 /* ArchivedOrdersData.swift */; };
+		FA76F9D229FBF88800CB43E5 /* DeliveredOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F9D129FBF88800CB43E5 /* DeliveredOrdersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		FA4918E329FBAB15001D170E /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		FA4918EA29FBD144001D170E /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		FA4918EC29FBDACE001D170E /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		FA76F9CF29FBF85000CB43E5 /* ArchivedOrdersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedOrdersData.swift; sourceTree = "<group>"; };
+		FA76F9D129FBF88800CB43E5 /* DeliveredOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveredOrdersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 		FA3B54F729F9960A003C519D /* DeliveredOrders */ = {
 			isa = PBXGroup;
 			children = (
+				FA76F9CF29FBF85000CB43E5 /* ArchivedOrdersData.swift */,
+				FA76F9D129FBF88800CB43E5 /* DeliveredOrdersViewModel.swift */,
 				FA3B54F429F994F9003C519D /* DeliveredOrdersListVC.swift */,
 			);
 			path = DeliveredOrders;
@@ -246,8 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA76F9D229FBF88800CB43E5 /* DeliveredOrdersViewModel.swift in Sources */,
 				FA3B54F329F98D97003C519D /* MainTabBarViewModel.swift in Sources */,
 				FA3B54E029F98942003C519D /* MainOrdersListVC.swift in Sources */,
+				FA76F9D029FBF85000CB43E5 /* ArchivedOrdersData.swift in Sources */,
 				FA4918EB29FBD144001D170E /* OrderDetailVC.swift in Sources */,
 				FA3B54F529F994F9003C519D /* DeliveredOrdersListVC.swift in Sources */,
 				FA4918E229FB9F23001D170E /* AlertInputView.swift in Sources */,

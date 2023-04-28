@@ -69,6 +69,7 @@ class MainOrderListViewModel {
             orders[index].status = .ready
         case .ready:
             orders[index].status = .delivered
+            ArchivedOrdersData.shared.orders.append(orders[index])
             DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
                 self.removeDeliveredOrder(row:index,id: order.id)
             }
