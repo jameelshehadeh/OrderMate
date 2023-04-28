@@ -12,7 +12,7 @@ protocol Alertable {}
 extension Alertable where Self: UIViewController {
     
     func showAlertInput(alertTitle: String,placeHolder: String,confirmTitle: String){
-        AlertInputView.show(onWindowOf: self.view, alertTitle: alertTitle, placeholder: placeHolder, confirmTitle: confirmTitle)
+        AlertInputView.shared.show(onWindowOf: self.view, alertTitle: alertTitle, placeholder: placeHolder, confirmTitle: confirmTitle)
     }
     
 }

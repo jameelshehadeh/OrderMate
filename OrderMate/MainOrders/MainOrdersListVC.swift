@@ -46,15 +46,6 @@ class MainOrdersListVC: UIViewController , Alertable {
     
     func bindData(){
         
-        viewModel.playSound = { [weak self] indexPath in
-            guard let self else {return}
-            DispatchQueue.main.async {
-                guard let cell = self.tableView.cellForRow(at: indexPath) as? OrderTableViewCell else {return}
-                cell.playDeliveredSound()
-            }
-            
-        }
-        
         viewModel.didUpdateOrders = { [weak self] in
             guard let self else {return}
             DispatchQueue.main.async {
@@ -97,8 +88,8 @@ class MainOrdersListVC: UIViewController , Alertable {
     }
     
     @objc func didTapPlaceOrder(){
-        
-        showAlertInput(alertTitle: "Enter Order name", placeHolder: "Enter order name", confirmTitle: "Place order")
+                
+        AlertInputView.shared.show(onWindowOf: view, alertTitle: "Enter Order name", placeholder: "Enter order name", confirmTitle: "Place order")
 
         AlertInputView.shared.confirmAction = { [weak self] orderName in
             guard let self , let orderName , !orderName.isEmpty else {return}

@@ -31,8 +31,6 @@ class MainOrderListViewModel {
     private let maxPreparingOrders = 3
     private let maxTotalOrders = 10
     
-    var playSound : (IndexPath)->() = {_ in}
-    
     var didUpdateOrders : ()->() = {}
     
     var showAlert : (String)->() = { _ in }
@@ -83,7 +81,7 @@ class MainOrderListViewModel {
     }
     
     func removeDeliveredOrder(row: Int,id: String) {
-        playSound(IndexPath(row: row, section: 0))
+        SoundPlayer.shared.playDeliveredSound()
         orders.removeAll { $0.id == id }
     }
     

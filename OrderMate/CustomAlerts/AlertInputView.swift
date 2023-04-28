@@ -13,16 +13,16 @@ class AlertInputView: UIView {
     
     var confirmAction: ((String?)->())?
     
-    static func show(onWindowOf view: UIView, alertTitle: String, placeholder: String, confirmTitle: String) {
+    func show(onWindowOf view: UIView, alertTitle: String, placeholder: String, confirmTitle: String) {
         guard let window = view.window else { return }
         window.addSubview(AlertInputView.shared)
-        AlertInputView.shared.confirmButton.titleLabel.text = confirmTitle
-        self.shared.titleLabel.text = alertTitle
-        self.shared.inputTextField.placeholder = placeholder
+        confirmButton.titleLabel.text = confirmTitle
+        titleLabel.text = alertTitle
+        inputTextField.placeholder = placeholder
 
-        self.shared.confirmGesture.addTarget(self.shared, action: #selector(didTapConfirm))
+        confirmGesture.addTarget(self, action: #selector(didTapConfirm))
         
-        self.shared.cancelGesture.addTarget(self.shared, action: #selector(didTapCancel))
+        cancelGesture.addTarget(self, action: #selector(didTapCancel))
         
         AlertInputView.shared.frame = window.bounds
     }
@@ -32,7 +32,9 @@ class AlertInputView: UIView {
 
     
     private lazy var containerVStack : UIStackView = {
-        let stackView = UIStackView()
+        let stackView = UIStackView.init(arrangedSubviews: [titleLabel,inputTextField,actionButtonsHStack])
+        stackView.layer.cornerRadius = 15
+        stackView.backgroundColor = .white
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
@@ -96,14 +98,8 @@ class AlertInputView: UIView {
     }
     
     func initViews(){
-        self.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
         
-        containerVStack.layer.cornerRadius = 15
-        containerVStack.backgroundColor = .white
-        containerVStack.addArrangedSubview(titleLabel)
-        containerVStack.addArrangedSubview(inputTextField)
-        containerVStack.addArrangedSubview(actionButtonsHStack)
-            
+        self.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
         self.addSubview(containerVStack)
         containerVStack.snp.makeConstraints { make in
             make.centerY.equalToSuperview()

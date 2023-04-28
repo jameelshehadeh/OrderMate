@@ -17,7 +17,6 @@ protocol OrderTableViewCellDelegate : AnyObject {
 class OrderTableViewCell: UITableViewCell {
 
     var timer: Timer?
-    var audioPlayer: AVAudioPlayer?
 
     weak var delegate : OrderTableViewCellDelegate?
     var indexPath : IndexPath?
@@ -112,28 +111,6 @@ class OrderTableViewCell: UITableViewCell {
         model.status == .delivered ? (orderStatusButton.backgroundColor = .systemGreen) : (orderStatusButton.backgroundColor = .purple)
     }
     
-  func playDeliveredSound() {
-      
-      guard let url = Bundle.main.url(forResource: "BellSound", withExtension: "mp3") else { return }
-        
-      
-      DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-          guard let self else {return}
-          do {
-              self.audioPlayer = try AVAudioPlayer(contentsOf: url)
-              self.audioPlayer?.prepareToPlay()
-          } catch {
-              print("Error loading sound file: \(error.localizedDescription)")
-          }
-          
-          guard let player = audioPlayer else { return }
-          
-          if !player.isPlaying {
-              player.play()
-          }
-      }
-  }
-    
     func startProgress() {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
     }
@@ -150,7 +127,6 @@ class OrderTableViewCell: UITableViewCell {
 
     
     func stopProgress() {
-        playDeliveredSound()
         timer?.invalidate()
         timer = nil
     }
