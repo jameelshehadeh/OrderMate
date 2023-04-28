@@ -9,7 +9,13 @@ import Foundation
 
 class DeliveredOrdersViewModel {
     
-     var orders : [Order]{
+    let archiver : ArchivedOrdersData
+    
+    init(archiver: ArchivedOrdersData) {
+        self.archiver = archiver
+    }
+    
+    private var orders : [Order]{
          return ArchivedOrdersData.shared.orders
     }
     

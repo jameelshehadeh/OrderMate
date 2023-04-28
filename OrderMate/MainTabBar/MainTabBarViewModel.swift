@@ -33,8 +33,10 @@ class MainTabBarViewModel {
     }
     
     private func prepareDeliveredOrdersListVC() -> UINavigationController {
+        let dataArchiver = ArchivedOrdersData.shared
+        let viewModel = DeliveredOrdersViewModel(archiver: dataArchiver)
         
-        let deliveredOrdersNavVC = UINavigationController(rootViewController: DeliveredOrdersListVC())
+        let deliveredOrdersNavVC = UINavigationController(rootViewController: DeliveredOrdersListVC(viewModel: viewModel))
         
         let oldOrdersTabBarItem = UITabBarItem(title: "Delivered Orders", image: UIImage(systemName: "checklist.checked"), selectedImage: nil)
         deliveredOrdersNavVC.tabBarItem = oldOrdersTabBarItem

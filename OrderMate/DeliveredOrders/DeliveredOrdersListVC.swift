@@ -9,7 +9,7 @@ import UIKit
 
 class DeliveredOrdersListVC: UIViewController {
 
-    let viewModel = DeliveredOrdersViewModel()
+    let viewModel : DeliveredOrdersViewModel
     
     private lazy var tableView : UITableView = {
        let tableView = UITableView()
@@ -23,6 +23,15 @@ class DeliveredOrdersListVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         NotificationCenter.default.addObserver(self, selector: #selector(handleOrdersChanged(_:)), name: .init(Constants.archiveOrderNotification), object: nil)
+    }
+    
+    init(viewModel: DeliveredOrdersViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
@@ -66,7 +75,7 @@ extension DeliveredOrdersListVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let orderItem = viewModel.orders[indexPath.row]
+        let orderItem = viewModel.order(at: indexPath.row)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.orderCellId, for: indexPath) as? OrderTableViewCell else {
             return UITableViewCell()
         }
