@@ -9,7 +9,9 @@ import Foundation
 
 class Constants {
     
+    // Cell identifiers
     static let orderCellId = "OrderCell"
     
-    
+    // Notification center names
+    static let archiveOrderNotification = "ArchiveOrder"
 }

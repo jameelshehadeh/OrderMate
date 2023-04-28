@@ -9,7 +9,8 @@ import UIKit
 
 extension UIViewController {
     
-    func setNavBarAppearance(bgColor: UIColor = .systemBackground , titleAtts: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor : UIColor.purple]){
+    typealias TitleTextAttributes = [NSAttributedString.Key : Any]
+    func setNavBarAppearance(bgColor: UIColor = .systemBackground , titleAtts: TitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.purple]){
         
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.backgroundColor = bgColor

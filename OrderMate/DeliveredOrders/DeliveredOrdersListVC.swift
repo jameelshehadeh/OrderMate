@@ -22,8 +22,12 @@ class DeliveredOrdersListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleOrdersChanged(_:)), name: .init("OrdersChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleOrdersChanged(_:)), name: .init(Constants.archiveOrderNotification), object: nil)
     }
+    
+    deinit {
+           NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.archiveOrderNotification), object: nil)
+       }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

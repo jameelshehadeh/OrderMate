@@ -15,7 +15,7 @@ class ArchivedOrdersData {
     
     var orders: [Order] = [] {
            didSet {
-               NotificationCenter.default.post(name: .init("OrdersChanged"), object: nil)
+               NotificationCenter.default.post(name: .init(Constants.archiveOrderNotification), object: nil)
            }
        }
     
