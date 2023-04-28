@@ -14,7 +14,7 @@ class OrderTableViewCell: UITableViewCell {
     var audioPlayer: AVAudioPlayer?
 
     private lazy var contentVStack : UIStackView = {
-        let stackView = UIStackView.init(arrangedSubviews: [hStackView,timeCreatedLabel,progressBarView])
+        let stackView = UIStackView.init(arrangedSubviews: [hStackView,orderNoLabel,progressBarView])
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
@@ -25,7 +25,7 @@ class OrderTableViewCell: UITableViewCell {
     }()
     
     private lazy var hStackView : UIStackView = {
-        let stackView = UIStackView.init(arrangedSubviews: [orderIdLabel,orderStatusButton])
+        let stackView = UIStackView.init(arrangedSubviews: [orderNameLabel,orderStatusButton])
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
@@ -33,16 +33,14 @@ class OrderTableViewCell: UITableViewCell {
     }()
     
     
-    private lazy var orderIdLabel : UILabel = {
+    private lazy var orderNameLabel : UILabel = {
         let label = UILabel()
-        label.text = "Order 1"
         return label
     }()
     
-    private lazy var timeCreatedLabel : UILabel = {
+    
+    private lazy var orderNoLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13 , weight: .light)
-        label.textColor = .lightGray
         return label
     }()
     
@@ -95,21 +93,10 @@ class OrderTableViewCell: UITableViewCell {
     }
     
     func configureCell(with model: Order) {
-        orderIdLabel.text = model.name
+        orderNoLabel.text = "Order no: \(model.orderNo)"
+        orderNameLabel.text = "Order name: \(model.name)"
         orderStatusButton.setTitle(model.status.rawValue, for: .normal)
-        timeCreatedLabel.text = formatDate(timeStamp: model.createdTime)
-    }
-    
-    func formatDate(timeStamp: TimeInterval) -> String {
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-
-        let date = Date(timeIntervalSince1970: timeStamp)
-        let formattedDate = dateFormatter.string(from: date)
-
-        return formattedDate
+        model.status == .delivered ? (orderStatusButton.backgroundColor = .systemGreen) : (orderStatusButton.backgroundColor = .purple)
     }
     
   func playDeliveredSound() {
