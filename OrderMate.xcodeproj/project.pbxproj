@@ -115,8 +115,8 @@
 		FA3B54F629F995ED003C519D /* MainOrders */ = {
 			isa = PBXGroup;
 			children = (
-				FA4918E929FBD120001D170E /* OrderDetail */,
 				FA4918E329FBAB15001D170E /* Alertable.swift */,
+				FA4918E929FBD120001D170E /* OrderDetail */,
 				FA3B550529FA74AB003C519D /* Order.swift */,
 				FA3B54DF29F98942003C519D /* MainOrdersListVC.swift */,
 				FA3B550729FA74C2003C519D /* MainOrderListViewModel.swift */,

@@ -36,6 +36,7 @@ class OrderTableViewCell: UITableViewCell {
     private lazy var hStackView : UIStackView = {
         let stackView = UIStackView.init(arrangedSubviews: [orderNameLabel,orderStatusButton])
         stackView.axis = .horizontal
+        stackView.spacing = 20
         stackView.alignment = .fill
         stackView.distribution = .fill
         return stackView
@@ -44,12 +45,15 @@ class OrderTableViewCell: UITableViewCell {
     
     private lazy var orderNameLabel : UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 17,weight: .medium)
+        label.textColor = .darkGray
         return label
     }()
     
     
     private lazy var orderNoLabel : UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 17,weight: .bold)
         return label
     }()
     
@@ -57,8 +61,9 @@ class OrderTableViewCell: UITableViewCell {
         let button = UIButton()
         button.backgroundColor = .purple
         button.layer.cornerRadius = 12
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15,weight: .medium)
         button.snp.makeConstraints { make in
-            make.width.equalTo(100)
+            make.width.equalTo(120)
         }
         button.addTarget(self, action: #selector(didTapStatus), for: .touchUpInside)
         button.setTitle("New", for: .normal)
