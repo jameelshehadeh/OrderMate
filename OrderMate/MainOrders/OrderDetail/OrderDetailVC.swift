@@ -17,7 +17,7 @@ class OrderDetailVC: UIViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.spacing = 10
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = .systemBackground
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.directionalLayoutMargins = .init(top: 10, leading: 20, bottom: 10, trailing: 20)
         return stackView
