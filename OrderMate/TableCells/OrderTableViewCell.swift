@@ -8,11 +8,20 @@
 import UIKit
 import AVFoundation
 
+protocol OrderTableViewCellDelegate : AnyObject {
+    
+    func updateCellStatus(indexPath: IndexPath)
+    
+}
+
 class OrderTableViewCell: UITableViewCell {
 
     var timer: Timer?
     var audioPlayer: AVAudioPlayer?
 
+    weak var delegate : OrderTableViewCellDelegate?
+    var indexPath : IndexPath?
+    
     private lazy var contentVStack : UIStackView = {
         let stackView = UIStackView.init(arrangedSubviews: [hStackView,orderNoLabel,progressBarView])
         stackView.axis = .vertical
@@ -48,7 +57,6 @@ class OrderTableViewCell: UITableViewCell {
         let button = UIButton()
         button.backgroundColor = .purple
         button.layer.cornerRadius = 12
-        button.isUserInteractionEnabled = false
         button.snp.makeConstraints { make in
             make.width.equalTo(100)
         }
@@ -127,6 +135,7 @@ class OrderTableViewCell: UITableViewCell {
     
     @objc func updateProgress() {
         if progressBar.progress < 1.0 {
+            progressBar.isHidden = false
             progressBar.progress += 1.0/150.0
         }
         else {
@@ -142,9 +151,8 @@ class OrderTableViewCell: UITableViewCell {
     }
     
     @objc func didTapStatus(){
-        progressBar.isHidden = false
-        startProgress()
-    
+        guard let indexPath else {return}
+        delegate?.updateCellStatus(indexPath: indexPath)
     }
     
     required init?(coder: NSCoder) {

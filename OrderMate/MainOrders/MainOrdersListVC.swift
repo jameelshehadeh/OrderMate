@@ -126,13 +126,27 @@ extension MainOrdersListVC : UITableViewDelegate , UITableViewDataSource {
             return UITableViewCell()
         }
         cell.configureCell(with: orderItem)
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.updateOrderStatus(at: indexPath.row)
+        let model = viewModel.order(at: indexPath.row)
+        let vc = OrderDetailVC(model: model)
+        push(vc)
     }
 }
+
+
+extension MainOrdersListVC : OrderTableViewCellDelegate {
+    
+    func updateCellStatus(indexPath: IndexPath) {
+        viewModel.updateOrderStatus(at: indexPath.row)
+    }
+    
+}
+
 
 extension MainOrdersListVC : UISearchResultsUpdating {
     
@@ -142,3 +156,4 @@ extension MainOrdersListVC : UISearchResultsUpdating {
     }
     
 }
+

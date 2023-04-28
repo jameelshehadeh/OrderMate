@@ -14,9 +14,15 @@ extension UIViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.backgroundColor = bgColor
         navBarAppearance.titleTextAttributes = titleAtts
+        navBarAppearance.largeTitleTextAttributes = titleAtts
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         
+    }
+    
+    func push(_ vc: UIViewController){
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
