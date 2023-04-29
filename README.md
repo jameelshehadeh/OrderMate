@@ -5,10 +5,7 @@ This iOS application is designed to help restaurants manage their orders efficie
 
 ## Screen Shots 
 
-<div style="display: flex; justify-content: center;">
-  <img src="[snapshot1.jpg](https://user-images.githubusercontent.com/24472126/235288933-d583b9a1-b8b9-4aac-b9e7-1ac5f560f028.png)" width="424" height="896" />
-  <img src="[snapshot2.jpg](https://user-images.githubusercontent.com/24472126/235288923-58056f95-d75d-44ad-9672-cfdb334b9d95.gif)" width="424" height="896" />
-</div>
+<img width="424" alt="ScreenShot1" src="https://user-images.githubusercontent.com/24472126/235288933-d583b9a1-b8b9-4aac-b9e7-1ac5f560f028.png">
 
 ## Features
 
