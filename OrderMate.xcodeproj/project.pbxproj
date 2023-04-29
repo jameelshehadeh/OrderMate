@@ -30,6 +30,7 @@
 		FA76F9D229FBF88800CB43E5 /* DeliveredOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F9D129FBF88800CB43E5 /* DeliveredOrdersViewModel.swift */; };
 		FA76F9E329FC127200CB43E5 /* MainOrderListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F9E229FC127200CB43E5 /* MainOrderListViewModelTests.swift */; };
 		FA76F9E729FC512400CB43E5 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F9E629FC512400CB43E5 /* SoundPlayer.swift */; };
+		FA76F9E929FCEABE00CB43E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA76F9E829FCEABE00CB43E5 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		FA76F9D929FC124800CB43E5 /* OrderMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA76F9E229FC127200CB43E5 /* MainOrderListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrderListViewModelTests.swift; sourceTree = "<group>"; };
 		FA76F9E629FC512400CB43E5 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		FA76F9E829FCEABE00CB43E5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		FA3B54CF29F98942003C519D = {
 			isa = PBXGroup;
 			children = (
+				FA76F9E829FCEABE00CB43E5 /* README.md */,
 				FA3B54DA29F98942003C519D /* OrderMate */,
 				FA76F9DA29FC124800CB43E5 /* OrderMateTests */,
 				FA3B54D929F98942003C519D /* Products */,
@@ -297,6 +300,7 @@
 			files = (
 				FA3B54E829F98943003C519D /* LaunchScreen.storyboard in Resources */,
 				FA3B550229F9A7D2003C519D /* BellSound.mp3 in Resources */,
+				FA76F9E929FCEABE00CB43E5 /* README.md in Resources */,
 				FA3B54E529F98943003C519D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
