@@ -3,6 +3,10 @@
 
 This iOS application is designed to help restaurants manage their orders efficiently. The app allows the restaurant to create orders, mark them as "Preparing," "Ready," and "Delivered," and keep track of previously delivered orders. The app also enforces queue patterns, limiting the number of orders that can be in the "Preparing" state and the maximum number of orders that can be created.
 
+## Screen Shots 
+
+![OrderMateVideo](https://user-images.githubusercontent.com/24472126/235288923-58056f95-d75d-44ad-9672-cfdb334b9d95.gif)
+<img width="424" alt="ScreenShot1" src="https://user-images.githubusercontent.com/24472126/235288933-d583b9a1-b8b9-4aac-b9e7-1ac5f560f028.png">
 
 ## Features
 
