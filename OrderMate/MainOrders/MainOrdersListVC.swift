@@ -38,12 +38,12 @@ class MainOrdersListVC: UIViewController , Alertable {
         button.addTarget(self, action: #selector(didTapPlaceOrder), for: .touchUpInside)
         return button
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindData()
     }
-    
     
     init(viewModel: MainOrderListViewModel) {
         self.viewModel = viewModel
@@ -65,10 +65,7 @@ class MainOrdersListVC: UIViewController , Alertable {
         
         viewModel.showAlert = { [weak self] alertMessage in
             guard let self else {return}
-            let alert = UIAlertController(title: "Warning", message: alertMessage, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Dismiss", style: .cancel)
-            alert.addAction(action)
-            self.present(alert, animated: true)
+            showAlert(title: "Warning", message: alertMessage, preferredStyle: .alert, completion: nil)
         }
         
     }
@@ -107,7 +104,6 @@ class MainOrdersListVC: UIViewController , Alertable {
             
         }
     }
-
 }
 
 

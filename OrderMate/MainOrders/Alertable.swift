@@ -11,8 +11,15 @@ protocol Alertable {}
 
 extension Alertable where Self: UIViewController {
     
-    func showAlertInput(alertTitle: String,placeHolder: String,confirmTitle: String){
-        AlertInputView.shared.show(onWindowOf: self.view, alertTitle: alertTitle, placeholder: placeHolder, confirmTitle: confirmTitle)
+    func showAlert(
+        title: String = "",
+        message: String,
+        preferredStyle: UIAlertController.Style = .alert,
+        completion: (() -> Void)? = nil
+    ) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: completion)
     }
     
 }
